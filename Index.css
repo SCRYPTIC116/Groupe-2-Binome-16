@@ -1,4 +1,3 @@
-/* Styles pour le menu mobile, uniquement sur petits écrans */
 @media (max-width: 767px) {
   #mobileMenu {
     display: none;
@@ -21,7 +20,6 @@
   }
 }
 
-/* Sur grand écran, on cache le bouton et le menu mobile */
 @media (min-width: 768px) {
   #mobileMenuBtn {
     display: none;
@@ -119,8 +117,7 @@ body {
 #intro-overlay.opacity-0 {
   opacity: 0;
 }
-
-/* Splash background (si besoin) */
+/*
 #splash {
   position: fixed;
   top: 0; left: 0;
@@ -129,7 +126,7 @@ body {
   z-index: 10;
   animation: fadeOut 3s forwards;
 }
-
+*/
 @keyframes fadeOut {
   to { opacity: 0; }
 }

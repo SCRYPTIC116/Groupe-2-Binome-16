@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Réservation d'une chambre - Hôtel Séoul</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="hotelX.css" />
+
+</head>
+<body class="bg-gray-100 font-sans">
+    <div id="intro"
+   class="fixed inset-0 bg-black z-50 flex items-center justify-center
+          transition-opacity duration-1000 ease-in-out opacity-100">
+    <h1 class="text-5xl font-black text-white animate-pulse">
+      <u>RESERVATION D'HOTEL</u>
+    </h1>
+  </div> 
+  <div id="intro-overlay">Bienvenue sur la page de réservation</div>
+
+  <header class="fixed top-0 w-full bg-white shadow z-50 flex items-center justify-between px-4 py-2 md:px-8 md:py-4">
+ <a href="Index.html" class="flex items-center">
+   <img src="Image/Emblem-of-South-Korea-nb.png" alt="Accueil" class="w-6 h-6 mr-2" />
+   <span class="font-bold text-xl">Hôtel Séoul</span>
+ </a>
+
+ <nav class="hidden md:flex space-x-6">
+   <a href="Index.html" class="text-gray-700 hover:text-blue-600">Accueil</a>
+   <a href="PATRIMOINE.html" class="text-gray-700 hover:text-blue-600">Patrimoine</a>
+   <a href="hotelX.html" class="text-blue-600 font-semibold">Hôtel</a>
+    <a href="GalleryX.html" class="text-gray-700 hover:text-blue-600">Galerie</a>
+ </nav>
+
+ <button id="mobileMenuBtn" class="md:hidden focus:outline-none" aria-expanded="false" aria-label="Menu">
+    <img src="images/MENU-n.png" alt="Menu" class="w-6 h-6" />
+ </button>
+
+ <div id="mobileMenu" class="hidden absolute right-4 top-full bg-white shadow-md mt-2 flex-col space-y-2 p-4 md:hidden">
+   <a href="Index.html" class="block px-4 py-2 hover:bg-gray-100">Accueil</a>
+   <a href="PATRIMOINE.html" class="block px-4 py-2 hover:bg-gray-100">Patrimoine</a>
+   <a href="hotelX.html" class="block px-4 py-2 hover:bg-gray-100">Hôtel</a>
+   <a href="GalleryX.html" class="block px-4 py-2 hover:bg-gray-100">Galerie</a>
+ </div>
+  </header>
+
+<main class="pt-24 px-4 md:px-8 pb-8">
+ <h1 class="text-3xl font-bold mb-4 text-center">Réservez votre chambre</h1>
+ <p class="text-lg mb-8 text-center">Remplissez le formulaire pour réserver votre séjour à Séoul.</p>
+
+ <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+ <form id="reservationForm" class="space-y-4" onsubmit="return validateForm()">
+
+ <div>
+   <label for="nom" class="block mb-1 font-semibold">Nom et prénom</label>
+    <input type="text" id="nom" name="nom" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+ </div>
+
+ <div>
+   <label for="email" class="block mb-1 font-semibold">Email</label>
+   <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+  </div>
+
+ <div>
+   <label for="telephone" class="block mb-1 font-semibold">Téléphone</label>
+   <input type="tel" id="telephone" name="telephone" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+ </div>
+
+ <div>
+   <label for="typeChambre" class="block mb-1 font-semibold">Type de chambre</label>
+   <select id="typeChambre" name="typeChambre" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+   <option value="">-- Sélectionnez --</option>
+   <option value="Simple">Simple</option>
+   <option value="Double">Double</option>
+   <option value="Suite">Suite</option>
+</select>
+</div>
+
+<div>
+<label for="nuit" class="block mb-1 font-semibold">Nombre de nuits</label>
+<input type="number" id="nuit" name="nuit" min="1" max="30" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+</div>
+
+<div>
+<label for="dateArrivee" class="block mb-1 font-semibold">Date d'arrivée</label>
+<input type="date" id="dateArrivee" name="dateArrivee" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+</div>
+
+<div class="text-center pt-4">
+<button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Réserver</button>
+</div>
+</form>
+</div>
+</main>
+
+
+  <footer class="bg-gray-800 text-white text-center py-6 mt-16">
+    <nav class="mb-4 space-x-4">
+      <a href="#">contact:+226 235711131719</a>
+      <a href="#"> Email : info@visitezseoul.com</a>
+      <a href="#">S/0 le amine</a>
+      <a href="#">Crédit</a>
+    </nav>
+    <p>© 2025 SEOUL. Tous droits réservés.</p>
+  </footer>
+<script src="PatrimoineN.js"></script>
+</body>
+</html>

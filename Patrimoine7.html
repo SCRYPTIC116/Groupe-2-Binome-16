@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patrimoine de Séoul</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+ #intro {
+ opacity: 1;
+ transition: opacity 1s ease-in-out;
+}
+#intro.fade-out {
+opacity: 0;
+}
+
+#mobileMenu {
+display: none;
+}
+
+#mobileMenu.show {
+display: flex;
+}
+
+#intro-overlay {
+opacity: 1;
+transition: opacity 1s ease-in-out;  
+}
+
+body {
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+background-color: antiquewhite;
+}
+
+</style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div id="intro"
+   class="fixed inset-0 bg-black z-50 flex items-center justify-center
+          transition-opacity duration-1000 ease-in-out opacity-100">
+    <h1 class="text-5xl font-black text-white animate-pulse">
+      <u>PATRIMOINE 7</u>
+    </h1>
+  </div>
+
+  <header class="fixed top-0 w-full bg-white shadow z-50 flex items-center justify-between px-4 py-2 md:px-8 md:py-4">
+    <a href="Index.html" class="flex items-center">
+      <img src="Image/Emblem-of-South-Korea-nb.png" alt="Accueil" class="w-6 h-6 mr-2" />
+      <span class="font-bold text-xl">Patrimoine</span>
+    </a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="Index.html" class="text-gray-700 hover:text-blue-600">Accueil</a>
+      <a href="PATRIMOINE.html" class="text-blue-600 font-semibold">Patrimoine</a>
+      <a href="hotelX.html" class="text-gray-700 hover:text-blue-600">Hôtel</a>
+      <a href="GalleryX.html" class="text-gray-700 hover:text-blue-600">Galerie</a>
+    </nav>
+
+    <button id="mobileMenuBtn" class="md:hidden focus:outline-none" aria-expanded="false" aria-label="Menu">
+      <img src="images/MENU-n.png" alt="Menu" class="w-6 h-6" />
+    </button>
+
+    <div id="mobileMenu" class="hidden absolute right-4 top-full bg-white shadow-md mt-2 flex-col space-y-2 p-4 md:hidden">
+      <a href="Index.html" class="block px-4 py-2 hover:bg-gray-100">Accueil</a>
+      <a href="PATRIMOINE.html" class="block px-4 py-2 hover:bg-gray-100">Patrimoine</a>
+      <a href="hotelX.html" class="block px-4 py-2 hover:bg-gray-100">Hôtel</a>
+      <a href="GalleryX.html" class="block px-4 py-2 hover:bg-gray-100">Galerie</a>
+    </div>
+  </header>
+
+  <main class="pt-24 px-4 md:px-8 pb-8">
+    <section class="max-w-5xl mx-auto mb-8">
+      <h1 class="text-3xl font-bold mb-4 text-center">Patrimoine de Séoul</h1>
+      <p class="text-lg text-center mb-6">Découvrez le riche patrimoine historique et culturel de Séoul, mêlant traditions ancestrales et modernité.</p>
+
+      <div class="flex justify-center mb-8">
+        <img src="Image/Gilsangsa-temple-bell.jpeg" alt="Patrimoine" class="w-full max-w-3xl rounded-lg shadow-lg" />
+      </div>
+      <p class="text-gray-700 mb-4">Le temple Gilsangsa est un complexe bouddhiste assez nouveau et populaire,
+        entouré de nature et de beauté dans les collines de Seongbuk-dong, un quartier de Séoul. Depuis 1997,
+        Gilsangsa est devenu populaire tant auprès des locaux que des touristes pour son harmonie avec la nature.
+        À l'origine, un restaurant haut de gamme connu sous le nom de Daewongak a été construit à cet endroit.
+        Le propriétaire du restaurant a décidé de faire don du terrain et des bâtiments au Vénérable Bupjeong (1932-2010),
+        un moine bouddhiste. En 1997, il a décidé de convertir le restaurant en temple Gilsangsa.</p>
+         <p></p>
+      <p class="mb-4">Explorez ces sites pour plonger dans l'histoire fascinante de la capitale sud-coréenne.</p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center py-6 mt-16">
+    <nav class="mb-4 space-x-4">
+      <a href="#">contact:+226 235711131719</a>
+      <a href="#"> Email : info@visitezseoul.com</a>
+      <a href="#">S/0 le amine</a>
+      <a href="#">Crédit</a>
+    </nav>
+    <p>© 2025 SEOUL. Tous droits réservés.</p>
+  </footer>
+  <script src="PatrimoineN.js"></script>
+</body>
+</html>

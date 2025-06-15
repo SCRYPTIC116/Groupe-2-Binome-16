@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patrimoine 1 – SEOUL</title>
+
+  <!-- Tailwind + votre CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Emblème fixe */
+    .Boutton-retour {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 40px;
+      height: auto;
+      z-index: 1001;
+    }
+
+    /* Header identique à PatrimoineX */
+    .menu-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .menu-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .nav-desktop {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px 0;
+    }
+    .nav-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #0066cc;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: #0066cc;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      padding: 10px 0;
+    }
+    .mobile-menu a {
+      padding: 12px 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    .mobile-menu a:hover {
+      background-color: #f5f5f5;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: block; }
+      .nav-desktop { display: none; }
+      .mobile-menu.active { display: flex; }
+      body { padding-top: 60px; }
+    }
+    @media (min-width: 769px) {
+      body { padding-top: 80px; }
+    }
+
+    /* Overlay + splash (rappel) */
+    #intro-overlay {
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+   /* #splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('Emblem-of-South-Korea-nb.png') center/cover no-repeat;
+      animation: fadeOut 3s ease forwards;
+      z-index: 10;
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; }
+    } */
+  </style>
+</head>
+<body>
+  <!-- Overlay d’intro -->
+  <div id="intro"
+       class="fixed inset-0 bg-black z-50 flex items-center justify-center
+              transition-opacity duration-1000 ease-in-out opacity-100">
+    <h1 class="text-5xl font-black text-white animate-pulse">
+      <u>PATRIMOINE</u>
+    </h1>
+  </div>
+
+  <!-- Splash screen (blur/logo) -->
+  <div id="Anim"></div>
+
+  <!-- En‑tête / menu identique à l’accueil -->
+  <header class="dans-menu">
+    <div class="menu-top">
+      <div class="Armoirie">
+        <a href="Index.html">
+          <img src="Image/Emblem-of-South-Korea-nb.png" alt="Retour accueil" class="Boutton-retour">
+        </a>
+      </div>
+      <button id="mobileMenuButton" class="btn-menu">
+        <img src="images/MENU-n.png" alt="Menu">
+      </button>
+    </div>
+    <nav class="lien-demander">
+      <a href="Index.html" class="nav-link">Accueil</a>
+      <a href="PATRIMOINE.html" class="nav-link">Patrimoine</a>
+      <a href="hotelX.html" class="nav-link">Hôtel</a>
+      <a href="GalleryX.html" class="nav-link">Galerie</a>
+    </nav>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="Index.html">Accueil</a>
+      <a href="PATRIMOINE.html">Patrimoine</a>
+      <a href="hotelX.html">Hôtel</a>
+      <a href="GalleryX.html">Galerie</a>
+    </div>
+        
+  </header>
+
+  <!-- Contenu principal : grid de 10 patrimoines -->
+  <main class="container mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-center">Les 10 incontournables</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Exemple d’un item -->
+      <a href="Patrimoine1.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/palais-de-Gyeongbok.jpg" alt="Patrimoine 1" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine2.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Jogyesa-Temple.jpg" alt="Patrimoine 2" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine3.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Jongmyo-Shrine.jpg" alt="Patrimoine 3" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine4.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Bongeunsa-Temple.jpg" alt="Patrimoine 4" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine5.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Deoksugung-Palace.jpg" alt="Patrimoine 5" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine6.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Bukchon-Hanok-Village.jpg" alt="Patrimoine 6" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine7.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Gilsangsa-temple-bell.jpeg" alt="Patrimoine 7" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine8.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Myeongdong Cathedral.jpg" alt="Patrimoine 8" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine9.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Lotte-World-Tower.jpg" alt="Patrimoine 9" class="w-full h-48 object-cover">
+      </a>
+      <a href="Patrimoine10.html" class="block overflow-hidden rounded-lg shadow-lg hover:opacity-75 transition">
+        <img src="Image/Bugaksan-Mountain.jpg" alt="Patrimoine 10" class="w-full h-48 object-cover">
+      </a>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-gray-800 text-white text-center py-6 mt-16">
+    <nav class="mb-4 space-x-4">
+      <a href="#">contact:+226 235711131719</a>
+      <a href="#"> Email : info@visitezseoul.com</a>
+      <a href="#">S/0 le amine</a>
+      <a href="#">Crédit</a>
+    </nav>
+    <p>© 2025 SEOUL. Tous droits réservés.</p>
+  </footer>
+
+  <script src="Patrimoine.js"></script>
+</body>
+</html>

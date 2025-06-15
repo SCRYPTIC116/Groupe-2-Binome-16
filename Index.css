@@ -1,0 +1,135 @@
+/* Styles pour le menu mobile, uniquement sur petits écrans */
+@media (max-width: 767px) {
+  #mobileMenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 4px;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1rem;
+  }
+
+  #mobileMenu.show {
+    display: flex;
+  }
+
+  /* Cache le menu sur écran plus grands */
+  #mobileMenu {
+    display: none;
+  }
+}
+
+/* Sur grand écran, on cache le bouton et le menu mobile */
+@media (min-width: 768px) {
+  #mobileMenuBtn {
+    display: none;
+  }
+  #mobileMenu {
+    display: none !important;
+  }
+}
+/* Reset & base */
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: antiquewhite;
+  color: #222;
+}
+
+/* Emblème */
+.Boutton-retour {
+  position: fixed;
+  top: 10px; left: 10px;
+  width: 25px; height: auto;
+  z-index: 1001;
+}
+
+/* Menu */
+.menu-container {
+  position: fixed; top:0; left:0; width:100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+  box-shadow:0 2px 15px rgba(0,0,0,0.1);
+  display:flex; flex-direction:column;
+}
+.menu-top {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 5%; border-bottom:1px solid rgba(0,0,0,0.05);
+}
+.nav-desktop { display:flex; justify-content:center; gap:40px; padding:15px 0; }
+.nav-link {
+  color:#333; text-decoration:none; font-weight:600; text-transform:uppercase;
+  position:relative; padding:5px 0; transition:color .3s;
+}
+.nav-link:hover { color:#0066cc; }
+.nav-link::after {
+  content:''; position:absolute; bottom:0; left:0;
+  width:0; height:2px; background:#0066cc; transition:width .3s;
+}
+.nav-link:hover::after { width:100%; }
+
+.mobile-menu-btn { display:none; background:none; border:none; cursor:pointer; }
+.mobile-menu {
+  display:none; flex-direction:column; background:white; padding:10px 0;
+}
+.mobile-menu a {
+  padding:12px 20px; color:#333; text-decoration:none; transition:background .3s;
+}
+.mobile-menu a:hover { background:#f5f5f5; }
+
+@media (max-width:768px) {
+  .mobile-menu-btn { display:block; }
+  .nav-desktop { display:none; }
+  .mobile-menu.active { display:flex; }
+  body { padding-top:60px; }
+}
+@media (min-width:769px) {
+  body { padding-top:80px; }
+}
+
+/* Overlay + splash */
+#intro-overlay {
+  opacity:1; transition:opacity 1s ease-in-out;
+}
+/*#splash {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background:url('Emblem-of-South-Korea-nb.png') center/cover no-repeat;
+  animation:fadeOut 3s ease forwards; z-index:10;
+}
+@keyframes fadeOut { to { opacity:0; } } */
+
+/* Sections page */
+.bloc { display:flex; align-items:center; justify-content:center; margin:40px 0; }
+.bloc.reverse { flex-direction:row-reverse; }
+.bloc img { width:50%; height:auto; object-fit:cover; }
+.bloc .texte { width:50%; padding:20px; }
+.bloc .texte h2 { margin-bottom:10px; font-size:1.8em; }
+.p1 { text-align:center; font-size:1em; padding:20px; }
+
+/* Styles pour la page */
+
+#intro-overlay {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+#intro-overlay.opacity-0 {
+  opacity: 0;
+}
+
+/* Splash background (si besoin) */
+#splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('Image/Emblem-of-South-Korea-nb.png') center/cover no-repeat;
+  z-index: 10;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}

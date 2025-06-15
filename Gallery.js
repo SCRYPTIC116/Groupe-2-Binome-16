@@ -1,79 +1,59 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
+// Fonction pour ouvrir une image en grand
+function openImageModal(src, alt) {
+  // Créer un élément modal si pas existant
+  let modal = document.getElementById('imageModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'imageModal';
+    modal.style.position = 'fixed';
+    modal.style.top = 0;
+    modal.style.left = 0;
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.cursor = 'pointer';
+    modal.style.zIndex = 9999;
+    document.body.appendChild(modal);
 
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('show');
-      // Mettre à jour l'attribut aria
-      const expanded = mobileMenu.classList.contains('show');
-      mobileBtn.setAttribute('aria-expanded', expanded);
-    });
-
-    // Fermer le menu après clic sur un lien
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('show');
-        mobileBtn.setAttribute('aria-expanded', 'false');
-      });
+    // Fermer la modal au clic
+    modal.addEventListener('click', () => {
+      modal.remove();
     });
   }
-});
-// Animation overlay
- window.addEventListener('load', () => {
-const overlay = document.getElementById('intro-overlay');
-setTimeout(() => {
-  overlay.classList.add('hide');
-  overlay.addEventListener('transitionend', () => {
- overlay.style.display = 'none';
-  }, { once: true });
-}, 3000);
- });
 
- // Gestion du clic sur une image pour ouvrir en plein écran
- const galleryImages = document.querySelectorAll('#gallery img');
- const fullscreenContainer = document.getElementById('fullscreen-viewer');
- const fullscreenImage = fullscreenContainer.querySelector('img');
-
- galleryImages.forEach(img => {
-img.addEventListener('click', () => {
-  fullscreenImage.src = img.src;
-  fullscreenContainer.classList.remove('hidden');
-});
- });
-
- // Fermer le plein écran en cliquant dessus
- document.getElementById('fullscreen-viewer').addEventListener('click', () => {
-fullscreenContainer.classList.add('hidden');
- });
-
- // Menu mobile
- document.addEventListener('DOMContentLoaded', () => {
-const mobileBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-if (mobileBtn && mobileMenu) {
-  mobileBtn.addEventListener('click', () => {
- mobileMenu.classList.toggle('show');
- // Mettre à jour l'attribut aria
- const expanded = mobileMenu.classList.contains('show');
- mobileBtn.setAttribute('aria-expanded', expanded);
-  });
-  // Fermer après clic sur un lien
-  mobileMenu.querySelectorAll('a').forEach(link => {
- link.addEventListener('click', () => {
-mobileMenu.classList.remove('show');
-mobileBtn.setAttribute('aria-expanded', 'false');
- });
-  });
+  // Ajouter l'image en grand dans la modal
+  modal.innerHTML = `<img src="${src}" alt="${alt}" style="max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,0.5); cursor:pointer;">`;
 }
- });
 
- window.addEventListener('load', () => {
-  const overlay = document.getElementById('intro-overlay');
-  setTimeout(() => {
-    overlay.classList.add('hide');
-    overlay.addEventListener('transitionend', () => {
-      overlay.style.display = 'none'; // cacher complètement après la transition
+// Ajouter l'événement clic à toutes les images de la galerie
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.style.cursor = 'pointer'; // changer le curseur pour indiquer qu'on peut cliquer
+  img.addEventListener('click', () => {
+    openImageModal(img.src, img.alt);
+  });
+});
+
+window.addEventListener('load', () => {
+  const Anim = document.getElementById('Anim');
+  if (Anim) {
+    Anim.addEventListener('animationend', () => {
+      Anim.style.display = 'none';
+    });
+  }
+
+  const intro = document.getElementById('intro');
+  if (intro) {
+    // Ajout de la classe pour faire disparaître l'intro
+    setTimeout(() => {
+      intro.classList.add('fade-out');
+    }, 3000);
+
+    // Lors de la fin de la transition, cacher l'élément
+    intro.addEventListener('transitionend', () => {
+      intro.style.display = 'none';
     }, { once: true });
-  }, 3000);
+  }
 });

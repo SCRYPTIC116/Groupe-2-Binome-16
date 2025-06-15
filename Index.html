@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEOUL</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Index.css" />
+</head>
+<body class="relative">
+
+  <button id="mobileMenuBtn" class="md:hidden focus:outline-none" aria-expanded="false" aria-label="Menu">
+  <img src="images/MENU-n.png" alt="Menu" class="w-6 h-6" />
+</button>
+
+<div id="mobileMenu" class="hidden">
+  <a href="Index.html" class="block px-4 py-2 hover:bg-gray-100">Accueil</a>
+  <a href="PATRIMOINE.html" class="block px-4 py-2 hover:bg-gray-100">Patrimoine</a>
+  <a href="hotelX.html" class="block px-4 py-2 hover:bg-gray-100">Hôtel</a>
+  <a href="GalleryX.html" class="block px-4 py-2 hover:bg-gray-100">Galerie</a>
+</div>
+
+<div id="intro-overlay" class="fixed inset-0 bg-black z-50 flex items-center justify-center opacity-100 transition-opacity duration-1000 ease-in-out">
+    <h1 class="text-5xl font-black text-white animate-pulse underline">WELCOME TO SEOUL</h1>
+  </div>
+
+  <div id="splash"></div>
+
+  <header class="fixed top-0 w-full bg-white shadow z-50 flex items-center justify-between px-4 py-2 md:px-8 md:py-4">
+    <a href="Index.html" class="flex items-center">
+      <img src="Image/Emblem-of-South-Korea-nb.png" alt="Accueil" class="w-6 h-6 mr-2" />
+    </a>
+
+    <nav class="hidden md:flex space-x-6">
+      <a href="Index.html" class="text-gray-700 font-semibold hover:text-blue-600">Accueil</a>
+      <a href="PATRIMOINE.html" class="text-gray-700 font-semibold hover:text-blue-600">Patrimoine</a>
+      <a href="hotelX.html" class="text-gray-700 font-semibold hover:text-blue-600">Hôtel</a>
+      <a href="GalleryX.html" class="text-gray-700 font-semibold hover:text-blue-600">Galerie</a>
+    </nav>
+
+    <button id="mobileMenuButton" class="md:hidden focus:outline-none" aria-expanded="false" aria-label="Menu">
+      <img src="images/MENU-n.png" alt="Menu" class="w-6 h-6" />
+    </button>
+
+    <div id="mobileMenu" class="hidden flex-col absolute top-full right-4 bg-white shadow-md mt-2 md:hidden">
+      <a href="Index.html" class="px-4 py-2 hover:bg-gray-100">Accueil</a>
+      <a href="PATRIMOINE.html" class="px-4 py-2 hover:bg-gray-100">Patrimoine</a>
+      <a href="hotelX.html" class="px-4 py-2 hover:bg-gray-100">Hôtel</a>
+      <a href="GalleryX.html" class="px-4 py-2 hover:bg-gray-100">Galerie</a>
+    </div>
+  </header>
+
+  <main class="pt-24 px-4 md:px-10 pb-12">
+    <div class="slideshow-container mb-12 relative max-w-7xl mx-auto">
+      <div class="mySlides fade hidden">
+        <img src="Image/63-SQUARE-d.jpg" alt="Skyscraper" class="w-full h-auto object-cover rounded-lg" />
+        <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">ONE OF THE TALLEST TOWER IN SEOUL</div>
+      </div>
+      <div class="mySlides fade hidden">
+        <img src="Image/Dongdaemun-Design-Plaza-d.jpg" alt="Market" class="w-full h-auto object-cover rounded-lg" />
+        <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">ONE OF THE BIGGEST MARKET IN SEOUL</div>
+      </div>
+      <div class="mySlides fade hidden">
+        <img src="Image/Cheonggyecheon-stream-d.jpg" alt="Walk" class="w-full h-auto object-cover rounded-lg" />
+        <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">A BEAUTIFUL WALK IN SEOUL</div>
+      </div>
+      <div class="mySlides fade hidden">
+        <img src="Image/Seoul-Fortress-Wall-d.jpg" alt="Big wall" class="w-full h-auto object-cover rounded-lg" />
+        <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">SEOUL OLD FORTRESS</div>
+      </div>
+    </div>
+
+    <section class="py-12 bg-blue-600 text-white">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-4xl font-bold">10M</div>
+          <div class="text-sm opacity-80">Habitants</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold">600+</div>
+          <div class="text-sm opacity-80">Ans d'histoire</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold">5</div>
+          <div class="text-sm opacity-80">Palais Royaux</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold">24/7</div>
+          <div class="text-sm opacity-80">Ville qui ne dort jamais</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-12">
+      <div class="max-w-4xl mx-auto mb-8">
+        <img src="Image/Myeongdong Cathedral.jpg" alt="Cathédrale" class="w-full h-auto rounded-lg mb-4" />
+        <div class="italic text-center px-4">
+          L'architecture de Séoul mêle tradition et modernité, comme en témoigne la cathédrale de Myeongdong, chef-d'œuvre néo-gothique.
+        </div>
+      </div>
+      <div class="max-w-4xl mx-auto mb-8 flex flex-col md:flex-row items-center md:space-x-4">
+        <div class="flex-1">
+          <img src="Image/Seoul-Tower.jpg" alt="Seoul Tower" class="w-full h-auto rounded-lg mb-4 md:mb-0" />
+        </div>
+        <div class="flex-1 font-bold px-4">
+          UNE VILLE DE TOUTE BEAUTE TOUTES LES SAISONS
+        </div>
+      </div>
+      <div class="max-w-4xl mx-auto mb-8">
+        <img src="Image/Lotte-World-Tower.jpg" alt="Lotte Tower" class="w-full h-auto rounded-lg mb-4" />
+        <div class="px-4">
+          <h2 class="text-xl font-semibold mb-2">PIONIÈRE DE L'ARCHITECTURE ET DE L'URBANISME MODERNE</h2>
+          <p>Séoul allie modernité et élégance à travers ses monuments emblématiques incarnant le charme de la ville.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center py-6 mt-16">
+    <nav class="mb-4 space-x-4">
+      <a href="#">contact:+226 235711131719</a>
+      <a href="#"> Email : info@visitezseoul.com</a>
+      <a href="#">S/0 le amine</a>
+      <a href="#">Crédit</a>
+    </nav>
+    <p>© 2025 SEOUL. Tous droits réservés.</p>
+  </footer>
+
+  <script src="Index.js"></script>
+</body>
+</html> 
